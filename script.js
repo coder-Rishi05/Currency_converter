@@ -1,4 +1,4 @@
-// const url ="https://api.currencyapi.com/v3/latest?apikey=cur_live_M5juaCdwZd0voerYegLFUM1n9TiqItlfLVTBANXb&base_currency="
+const url ="https://api.currencyapi.com/v3/latest?apikey=cur_live_M5juaCdwZd0voerYegLFUM1n9TiqItlfLVTBANXb&base_currency="
 
 // Toggle mobile nav
 document.addEventListener("DOMContentLoaded", () => {
