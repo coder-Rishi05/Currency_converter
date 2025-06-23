@@ -7,7 +7,7 @@ It gives list of countries of the currency amount.
 
 ## 🚀 Live Demo
 
-👉 [Live Demo Link](#) — *(Replace this with your deployed Netlify or GitHub Pages link)*
+👉 [Live Demo Link](#) — https://curencyconvert.netlify.app/
 
 ---
 
