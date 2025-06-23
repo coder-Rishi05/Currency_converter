@@ -1,27 +1,48 @@
 // const url ="https://api.currencyapi.com/v3/latest?apikey=cur_live_M5juaCdwZd0voerYegLFUM1n9TiqItlfLVTBANXb&base_currency="
 
-const tableBody = document.querySelector("tbody");
-const btn = document.querySelector(".btn");
+// Toggle mobile nav
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
 
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const value = Number(document.querySelector("input[name='quantity']").value);
-  const currency = document.querySelector("select[name='currency']").value;
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 
-  populate(value, currency);
-});
+  // Optional: Click outside to close
+  document.addEventListener("click", (e) => {
+    if (
+      !hamburger.contains(e.target) &&
+      !navLinks.contains(e.target) &&
+      navLinks.classList.contains("active")
+    ) {
+      navLinks.classList.remove("active");
+    }
+  });
 
-const populate = async (value, currency) => {
-  let str = "";
+  const tableBody = document.querySelector("tbody");
+  const btn = document.querySelector(".btn");
 
-  const data = await fetch(url+currency);
-  const jsonData = await data.json();
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const value = Number(
+      document.querySelector("input[name='quantity']").value
+    );
+    const currency = document.querySelector("select[name='currency']").value;
 
-  document.querySelector(".output").style.display="block"
+    populate(value, currency);
+  });
 
-    
-  for (let key of Object.keys(jsonData["data"])) {
-    str += `
+  const populate = async (value, currency) => {
+    let str = "";
+
+    const data = await fetch(url + currency);
+    const jsonData = await data.json();
+
+    document.querySelector(".output").style.display = "block";
+
+    for (let key of Object.keys(jsonData["data"])) {
+      str += `
  <tr>
    <td>${key}</td>
    <td>${jsonData["data"][key]["code"]}</td>
@@ -29,7 +50,8 @@ const populate = async (value, currency) => {
 </tr>
 
 `;
-  }
+    }
 
-  tableBody.innerHTML = str;
-};
+    tableBody.innerHTML = str;
+  };
+});
