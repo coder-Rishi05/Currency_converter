@@ -1,6 +1,6 @@
-# 💱 Currency Converter Web App
+# 💱 Currency tracker Web App
 
-A responsive currency converter web application built using **HTML**, **CSS**, and **JavaScript**. It allows users to convert any selected amount in a base currency (like INR, USD, EUR) to a wide range of world currencies using real-time exchange rates. 
+A responsive currency tracker web application built using **HTML**, **CSS**, and **JavaScript**. It allows users to see any selected amount in a base currency (like INR, USD, EUR) to a wide range of world currencies using real-time exchange rates. 
 It gives list of countries of the currency amount.
 
 ---
